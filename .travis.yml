@@ -1,0 +1,54 @@
+language: cpp
+dist: trusty
+sudo: false
+
+branches:
+  only:
+  - master
+  - /^\d+\.\d+(\.\d+)?(-\S*)?$/
+
+matrix:
+  include:
+
+  - os: linux
+    env: STYLE
+    cache: false
+    before_install:
+    - pyenv global $(pyenv whence 2to3)  # activate all python versions
+    - python3 -m pip install --user --upgrade pip wheel
+    install:
+    - python3 -m pip install --user --upgrade flake8
+    script:
+    - flake8 --ignore=E111
+
+  - os: linux
+    compiler: gcc
+    env: PYTHON=2.7
+
+  - os: linux
+    compiler: clang
+    env: PYTHON=3.4
+
+  - os: osx
+    env: PYTHON=2.7
+
+  - os: osx
+    env: PYTHON=3.6
+
+before_install:
+- |
+  [[ "${TRAVIS_OS_NAME}" == "linux" ]] && export CXX=g++-4.8 CC=gcc-4.8
+  pip install --user --upgrade pip virtualenv
+  virtualenv -p "python${PYTHON}" venv
+  source venv/bin/activate
+
+install:
+- |
+  python setup.py sdist
+  pip install --verbose dist/*.tar.gz
+
+script:
+  - python -c 'import tensorstore'
+
+notifications:
+  email: false
