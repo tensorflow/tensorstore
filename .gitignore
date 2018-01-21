@@ -1,0 +1,10 @@
+*.egg-info
+*.py[cod]
+*.so
+.DS_Store
+/.idea
+/bazel-*
+/build
+/dist
+/docs/.build
+MANIFEST
