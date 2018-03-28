@@ -24,7 +24,6 @@ def get_readme():
     return f.read()
 
 
-
 setuptools.setup(
     name='tensorstore',
     version='0.0.1a1',
