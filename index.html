@@ -1,0 +1,86 @@
+<!doctype html>
+<!--
+@license
+Copyright 2018 The TensorFlow Authors. All Rights Reserved.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Placeholder for TensorBoard storage code">
+
+<title>TensorStore</title>
+<link rel="canonical" href="http://tensor.store">
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEdUlEQVR4Ab2VA5AsSRRFcxlYWz227VkG1ra/bdu2bdu27fDa3m13j+/eFzVdUTPd/9dMzO/piJMVUch76mXnK3UzflUHc5uSoeQ2ouqDDA0hlewmqOY78lljCNxPphBchyOkKFgCHcg/BHVgPnnoZgm8Sa4S6Bwgh/KA44XA+QLgZB7P+UlYSaeGCKSRnQS1wQkGnyxA2ZokeCcmo2ovZa5Q5GhAkSvk9foI3EMmBAw+xpBTRajclYmSBZFwT3gc1k+jYG+ShNL5GcDZfOBiPquTG0hkG6uWSpQgQ20kvB35q3a5cTRfC96fg9LlcQx+ijwJz8wQOLrEwfp+Av57JxbOHkkoX5cNXMoXGU1CMM6xJ6sfUYqDDoOakK/91vlwHuQheaOylQnwTAmBa+wTcmR4qCbQKQ62Jomwt0yA9YM4CO7BKajcmaMty0kGnyiSuVAqc0wN+ZUoJUPl3pxiXC04WXXYv2Q4WSQlR/n6ZHimhcI15gm4J1vgmc7gaWSGCIRUOtrHw/alJmBvRZpT5F1KfR4P79R0VB3JQ8W2ND4XJvIyxymilAzOzkmXy5ZkAhdoeV4rmW+dK7anwzs7QntooiHYgHeupdzZM6aD7dOkrRJOCY3WCZSKx39vJMDVN5aiMsdTvjlOEaVksH4ct9/6XhxvSmZgNnCRa7QvG6VLYuEe/6Sgh8nD3jkh2iRTq8/NCpHjI0TZmyS2ZvifBD5snyXB0S2azz1lFP9eF6D1HnuLBIiE7dNEeKclyVvBLes8VSaXMC3YO4/nx0TAMylMk/BdW2B5gSjB3izhHs45Xhf4PAnO3jEyp1FggS7Am0741s76EW27RDDsSf0tucYSAM/kMDi6xsLeNBGeCeHwzPZVIgSu8U9kE2WES5DJeY/UEviWfEyUUWCn0dbVP1reVDOVcJaY56rszRJh+yiZ98lOCIOU3j1OW6LS5fFFRAXC9kXS5xS4RIHRnPNWomoLPETGEW9tAe98yzBX3+hm1g9SRID/btImgcFciklPoGR+FP83GfKH/QXHCttzJ91GVF2RQYcCT1FgCQUqabuN4YlE8VyBbCtel/LzGIeSxZHshCnad+BkYXXPyJHj9zha8CX/yHcSZUbAk64BURaifFDgfX17NZdlosCMdOBaMXC5QAtnd9S37rZ0lCyMbkuUGTKYwvB3GV6zyXwQD2e3JDaoLOASg8+zy+1ji14aKy1a+kZfosyQwRQG6wKCrxrWD+MgeMako3xDCrtiiL51uTu6EGWGDKYYBfxEmsoHiNUYGMKO+aSxU3YjygwZTAkkwK2lf3zk6B4dUbvRDAiOgGzDtvFwDY6Cg0fbJ8kiI93RKLCchAZHQHoBS+9lFxScvWIgvd49PFJ6xwne/yxRQlAFPBPZCedb4CXy9u7x4Z2Jqi8ymBJQYFKY7yuofR1nhkQTVV9kMMVEwMczRAmNsASNL9C0DgIvBVMglpy7gcBBYgmWgFGkNQX+Mgj8xvOfECUEXUCgwH0UmEWBGRS4m6iG8D8TNIQRYxulpQAAAABJRU5ErkJggg==">
+<link rel="apple-touch-icon" href="_/assets/img/tf-apple-touch-icon-180x180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700|Raleway:700">
+
+<style>
+  h1, h2, h3, h4 {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  html {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: #222;
+    line-height: 1.5;
+  }
+
+  body {
+    max-width: 648px;
+    margin: 32px auto 32px auto;
+  }
+
+  h1 {
+    font-size: 48px;
+    margin: 25px 0 25px 0;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin: 25px 0 25px 0;
+  }
+
+  h3 {
+    font-size: 21px;
+    margin: 16px 0 16px 0;
+  }
+
+  a,
+  a:focus,
+  a:visited,
+  a:active {
+    text-decoration: none;
+  }
+
+  .tf {
+    margin-top: -8px;
+    width: 72px;
+    height: 72px;
+    position: absolute;
+  }
+</style>
+
+<h1>
+  TensorStore
+  <img class="tf" src="_/assets/img/tf-apple-touch-icon-180x180.png" alt="[TF]">
+</h1>
+
+<p>
+  The tensors <em>must</em> flow.<br>
+  This is a placeholder for some
+  <a href="https://github.com/tensorflow/tensorboard">TensorBoard</a> storage code.<br>
+  Follow <a href="https://github.com/tensorflow/tensorstore">
+  tensorflow/tensorstore</a> on GitHub.
