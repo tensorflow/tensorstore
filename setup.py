@@ -80,7 +80,7 @@ class CcFlags(object):
 
   def apply(self, ext):
     if (ext.language == self.language or
-          (ext.language == 'c++' and self.language == 'c')):
+            (ext.language == 'c++' and self.language == 'c')):
       apply_flags(ext.extra_compile_args, self.system_copts, self.copts)
       apply_flags(ext.extra_link_args, self.system_ldflags, self.ldflags)
 
